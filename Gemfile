@@ -2,20 +2,20 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.4'
+gem 'rails', '4.1.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: [:development, :test]
 #use bootstrap library for styles
-gem 'bootstrap-sass', '3.3.5.1'
+gem 'bootstrap-sass', '3.3.1'
 #use font awesome library for icons
-gem 'font-awesome-sass', '4.4.0'
+gem 'font-awesome-sass', '4.2.0'
 # Use postgresql as the database for production
 group :production do
     gem 'pg'
     gem 'rails_12factor'
 end
 # Use SCSS for stylesheets
-gem 'sass-rails', '5.0.3'
+gem 'sass-rails', '4.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -35,9 +35,9 @@ gem 'sdoc', '0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 #use devise for user auth
-gem 'devise', '3.5.2'
+gem 'devise', '3.4.1'
 #use stripe for handling payments
-gem 'stripe', '1.25.0'
+gem 'stripe', '1.16.0'
 # use figaro to hide secret keys
 gem 'figaro', '1.0.0'
 
