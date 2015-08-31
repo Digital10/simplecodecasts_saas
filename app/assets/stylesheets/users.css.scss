@@ -27,10 +27,25 @@
     margin-top: 0;
     }
     
-.profile-avatar {
+.profile-avatar-thumb {
+    height: 75px;
+    width: 75px;
     border: 1px solid white;
     border-radius: 50%;
     -webkit-box-shadow: -3px 5px 5px 0px rgba(50, 50, 50, 0.75);
     -moz-box-shadow:    -3px 5px 5px 0px rgba(50, 50, 50, 0.75);
     box-shadow:         -3px 5px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+.profile-avatar{
+    height: 75px;
+    width: 75px;
+    border: 1px solid white;
+    -webkit-box-shadow: -3px 5px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    -3px 5px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         -3px 5px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+.well.lightgray-bg {
+    background-color: lightgray;
 }

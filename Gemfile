@@ -42,6 +42,8 @@ gem 'stripe', '1.16.0'
 gem 'figaro', '1.0.0'
 # Use paperclip for image uploads
 gem 'paperclip', '4.2.1'
+# Auto-prefixer for vendor prefixes in css
+gem 'autoprefixer-rails', '5.2.1.3'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '3.1.7'
 
