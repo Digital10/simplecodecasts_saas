@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.0'
+gem 'rails'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: [:development, :test]
 #use bootstrap library for styles
@@ -15,11 +15,11 @@ group :production do
     gem 'rails_12factor'
 end
 # Use SCSS for stylesheets
-gem 'sass-rails', '4.0.3'
+gem 'sass-rails', '4.0.5'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '4.0.0'
+gem 'coffee-rails', '4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
@@ -44,15 +44,19 @@ gem 'figaro', '1.0.0'
 gem 'paperclip', '4.2.1'
 # Auto-prefixer for vendor prefixes in css
 gem 'autoprefixer-rails', '5.2.1.3'
+gem 'mailboxer'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '3.1.7'
-
+gem "compass-rails"
 # Use unicorn as the app server
 # gem 'unicorn'
-
+gem 'chosen-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'sass', '3.2.2'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'bootstrap-will_paginate'
+gem 'will_paginate'
+gem 'jquery-turbolinks'

@@ -1,30 +1,35 @@
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
-        <ul class="list-unstyled">
-            <% @users.each do |user| %>
-                <% if user.profile %>
-                    <li>
-                        <div class="well row <%= cycle('lightgray-bg','') %>">
-                            <div class="col-sm-4 text-center">
-                                <% if user.profile.avatar %>
+        <%= will_paginate %>
+            <ul class="list-unstyled">
+                <% @users.each do |user| %>
+                    <% if user.profile %>
+                        <li>
+                            <div class="well row <%= cycle('lightgray-bg','') %>">
+                                <div class="col-sm-4 text-center">
+                                    <% if user.profile.avatar %>
+                                        <%= link_to user do %>
+                                            <%= image_tag user.profile.avatar.url(:thumb), class: "profile-avatar-thumb" %>
+                                        <% end %>
+                                    <%end%>
+                                </div>
+                                <div>
                                     <%= link_to user do %>
-                                        <%= image_tag user.profile.avatar.url(:thumb), class: "profile-avatar-thumb" %>
+                                    <h2> <%= user.profile.first_name %> <%= user.profile.last_name %></h2>
                                     <% end %>
-                                <%end%>
+                                    <p> <%= user.profile.job_title %>
+                                    <% if user.plan_id == 2 %>
+                                        <span class="label label-danger">PRO</span></p>
+                                    <% end %>
+                                    <% unless current_user == user %>
+                                        <%= link_to 'Send message', new_message_path(to: user.id), class: 'btn btn-default btn-sm' %>
+                                    <% end %>
+                                </div>
                             </div>
-                            <div>
-                                <%= link_to user do %>
-                                <h2> <%= user.profile.first_name %> <%= user.profile.last_name %></h2>
-                                <% end %>
-                                <p> <%= user.profile.job_title %>
-                                <% if user.plan_id == 2 %>
-                                    <span class="label label-danger">PRO</span></p>
-                                <% end %>
-                            </div>
-                        </div>
-                    </li>
+                        </li>
+                    <% end %>
                 <% end %>
-            <% end %>
-        </ul>
+            </ul>
+        <%= will_paginate %>
     </div>
 </div>

@@ -1,11 +1,27 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'users/registrations' }
-  resources :users do
-    resource :profile
-  end
-  resources :contacts
-  get '/about' => 'pages#about'
-  root 'pages#home'
+    devise_for :users, controllers: { registrations: 'users/registrations' }
+    resources :users do
+      resource :profile
+    end
+    resources :contacts
+    get '/about' => 'pages#about'
+    root 'pages#home'
+    
+    resources :conversations, only: [:index, :show, :destroy] do
+      member do
+        post :reply
+        post :restore
+        post :mark_as_read
+      end
+      collection do
+        delete :empty_trash
+      end
+    end
+  resources :messages, only: [:new, :create]
+  
+  resources :users, only: [:index]
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

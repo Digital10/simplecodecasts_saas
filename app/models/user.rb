@@ -6,7 +6,11 @@ class User < ActiveRecord::Base
   belongs_to :plan
   has_one :profile
   attr_accessor :stripe_card_token
-         
+  
+  def mailboxer_email(object)
+      email
+  end
+  
   def save_with_payment
       if valid?
         customer = Stripe::Customer.create(description: email, plan: plan_id, card: stripe_card_token)
@@ -14,4 +18,6 @@ class User < ActiveRecord::Base
         save!
       end
   end
+  
+   acts_as_messageable
 end
